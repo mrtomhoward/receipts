@@ -87,9 +87,7 @@ module Receipts
       table(line_items, width: bounds.width, cell_style: {border_color: "eeeeee", inline_format: true}) do
         cells.padding = 6
         cells.borders = []
-        p "XXX cells: #{cells}"
-        p "XXX cell: #{cell}"
-        cell[-1].align = :right
+        cells(-1..-1).align = :right
         row(0..borders).borders = [:bottom]
       end
     end
