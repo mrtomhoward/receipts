@@ -80,6 +80,7 @@ module Receipts
     end
 
     def render_line_items(line_items, margin_top: 30)
+      p "XXX render_line_items"
       move_down margin_top
 
       borders = line_items.length - 2
