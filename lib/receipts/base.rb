@@ -7,7 +7,7 @@ module Receipts
     end
 
     def initialize(attributes = {})
-      super(page_size: "LETTER")
+      super(page_size: "A4")
       setup_fonts attributes[:font]
 
       @title = attributes.fetch(:title, self.class.title)
@@ -86,6 +86,7 @@ module Receipts
       table(line_items, width: bounds.width, cell_style: {border_color: "eeeeee", inline_format: true}) do
         cells.padding = 6
         cells.borders = []
+        cells[-1].align = :right
         row(0..borders).borders = [:bottom]
       end
     end
