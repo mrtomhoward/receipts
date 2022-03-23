@@ -80,14 +80,12 @@ module Receipts
     end
 
     def render_line_items(line_items, margin_top: 30)
-      p "XXX render_line_items"
       move_down margin_top
 
       borders = line_items.length - 2
       table(line_items, width: bounds.width, cell_style: {border_color: "eeeeee", inline_format: true}) do
         cells.padding = 6
         cells.borders = []
-        cells(-1..-1).align = :right
         row(0..borders).borders = [:bottom]
       end
     end
